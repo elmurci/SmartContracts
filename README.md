@@ -16,11 +16,22 @@ Good Practices & Tricks
 > - All calls that send to untrusted address should have a gas limit.
 > - Balances should be reduced before a send, not after one.
 > - Use ```delete``` on arrays to delete all its elements.
+> - Use shorter types for struct elements and sort them such that short types are grouped together. This can lower the gas costs as multiple SSTORE operations might be combined into a single (SSTORE costs 5000 or 20000 gas, so this is what you want to optimise). Use the gas price estimator (with optimiser enabled) to check!
+> - If you end up checking conditions on input or state a lot at the beginning of your functions, try using function modifiers
+> - If your contract has a function called send but you want to use the built-in send-function, use address(contractVariable).send(amount).
+> - If you want your contracts to receive ether when called via send, you have to implement the fallback functions.
 > - Initialise storage structs with a single assignment: 
 ```x = MyStruct({a: 1, b: ```2});
 > - If you do not want your contracts to receive ether when called via send, you can add a throwing fallback function: 
 ```function() { throw; }```.
 > - Make your state variables public - the compiler will create getters for you for free.
+
+Pitfalls
+-------------
+
+> - In for (var i = 0; i < arrayName.length; i++) { ... }, the type of i will be uint8, because this is the smallest type that is required to hold the value 0. If the array has more than 255 elements, the loop will not terminate.
+
+
 
 (Solidity) Cheatsheet
 -------------
@@ -84,3 +95,5 @@ References
   [1]:  [b9lab Solidity Cheatsheet](http://https://s3-eu-west-1.amazonaws.com/b9-academy-assets/public/solidity-cheatsheet.pdf)
   
   [2]:  [Peter Vessenes](http://vessenes.com)
+  
+  [3]:  [Smart Contract Security](https://blog.ethereum.org/2016/06/10/smart-contract-security/)
