@@ -2,7 +2,9 @@ Smart Contracts
 ===================
 
 Compilation of tricks, good practices and cheatsheet for (Solidity) Smart Contracts in Ethereum. 
+
 Sources of the information displayed here are at the bottom of this file.
+
 Feel free to PR and add content!
 
 ----------
@@ -76,4 +78,5 @@ Good Practices & Tricks
 
 
   [1]:  [b9lab Solidity Cheatsheet](http://https://s3-eu-west-1.amazonaws.com/b9-academy-assets/public/solidity-cheatsheet.pdf)
+  
   [2]:  [Peter Vessenes](http://vessenes.com)
