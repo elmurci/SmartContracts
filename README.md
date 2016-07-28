@@ -77,6 +77,10 @@ Good Practices & Tricks
 > - ```indexed for event parameters:``` Stores the parameter as topic.
 
 
+References
+-------------
+
+
   [1]:  [b9lab Solidity Cheatsheet](http://https://s3-eu-west-1.amazonaws.com/b9-academy-assets/public/solidity-cheatsheet.pdf)
   
   [2]:  [Peter Vessenes](http://vessenes.com)
